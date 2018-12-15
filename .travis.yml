@@ -1,6 +1,6 @@
 ---
 os: osx
-sudo: true
+sudo: required
 
 install: 
   - pip install virtualenv
