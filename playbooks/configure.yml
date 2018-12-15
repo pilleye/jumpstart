@@ -1,26 +1,30 @@
 ---
-- name: Customize macOS Developer Setup Installation
+- name: Customize Jumpstart Installation
   hosts: system
   gather_facts: no
+  
 
   vars_prompt:
-    - name: devsetup_main_homebrew_enabled
-      prompt: "Would you like to install Homebrew? Press enter for default "
+    - name: jumpstart_understand_default
+      prompt: "For the following, press enter for the default value in"
+      default: "square brackets"
+      private: no
+    - name: jumpstart_main_homebrew_enabled
+      prompt: "Would you like to install Homebrew? Press enter for default"
       default: "yes"
       private: no
-    - name: devsetup_homebrew_package_zsh_enabled
-      prompt: "Would you like to install the Z shell (zsh)? Press enter for default "
+    - name: jumpstart_homebrew_package_zsh_enabled
+      prompt: "Would you like to install the Z shell (zsh)? Press enter for default"
       default: "yes"
       private: no
-    - name: devsetup_homebrew_package
 
   tasks:
     - lineinfile:
-        path: "../vars/vars.yml"
-        regexp: "^devsetup_main_homebrew_enabled: (?:True|False)$"
-        line: "devsetup_main_homebrew_enabled: {{ devsetup_main_homebrew_enabled|bool }}"
+        path: "../global_vars/vars.yml"
+        regexp: "^jumpstart_main_homebrew_enabled: (?:True|False)$"
+        line: "jumpstart_main_homebrew_enabled: {{ jumpstart_main_homebrew_enabled|bool }}"
     - lineinfile:
-        path: "../vars/vars.yml"
-        regexp: "^devsetup_homebrew_package_zsh_enabled: (?:True|False)$"
-        line: "devsetup_homebrew_package_zsh_enabled: {{ devsetup_homebrew_package_zsh_enabled|bool }}"
+        path: "../global_vars/vars.yml"
+        regexp: "^jumpstart_homebrew_package_zsh_enabled: (?:True|False)$"
+        line: "jumpstart_homebrew_package_zsh_enabled: {{ jumpstart_homebrew_package_zsh_enabled|bool }}"
       

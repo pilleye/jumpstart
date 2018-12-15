@@ -1,3 +1,3 @@
 set -e 
 
-echo "no" | sudo ./devset
+echo "no" | ./devset
