@@ -1,0 +1,10 @@
+---
+- name: Ensuring Xcode Command Lines Tools are installed
+  shell: xcode-select -p
+  register: "check_xcode_command_line_tools"
+
+- name: Installing Xcode Command Line Tools
+  command: "xcode-select --install"
+  when: check_xcode_command_line_tools is not defined
+
+

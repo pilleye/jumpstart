@@ -19,4 +19,4 @@ read -r -p "Do you wish to customize your installation? " confirm
   esac
 
 # Run ansible playbook
-ansible-playbook -i inventories/inventory playbooks/main.yml 
+ansible-playbook -i inventories/inventory playbooks/main.yml --extra-vars "@./vars/vars.yml"

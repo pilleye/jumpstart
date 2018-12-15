@@ -16,3 +16,13 @@
   homebrew:
     upgrade_all: true
 
+- name: Ensuring ~/.bash_profile exists
+  file: 
+    path: ~/.bash_profile
+    state: touch
+
+- name: Using Homebrew packages by default
+  lineinfile: 
+    path: ~/.bash_profile
+    regexp: '^export PATH="/usr/local/bin:\$PATH"'
+    line: 'export PATH="/usr/local/bin:$PATH"'

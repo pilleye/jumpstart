@@ -1,0 +1,3 @@
+---
+- import_tasks: zsh.yml
+  when: devsetup_homebrew_package_zsh_enabled
