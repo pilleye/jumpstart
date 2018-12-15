@@ -1,0 +1,10 @@
+---
+- name: Running installation
+  hosts: system
+  vars_files:
+    - ../vars/vars.yml
+
+  roles:
+    - role: brew
+      when: 
+      - devsetup_install_homebrew_enabled

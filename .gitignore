@@ -1,0 +1,6 @@
+
+# Python Virtual Environment used when running
+.venv
+
+# Retry files with failed Ansible run
+*.retry

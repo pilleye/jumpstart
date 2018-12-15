@@ -1,0 +1,14 @@
+---
+os: osx
+language: python
+cache: pip
+python: "2.7"
+
+sudo: required
+
+install: 
+  - pip install -r requirements.txt
+
+script:
+  - ./tests/test.sh
+  

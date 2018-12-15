@@ -1,0 +1,18 @@
+---
+- name: Customize macOS Developer Setup Installation
+  hosts: system
+  gather_facts: no
+
+  vars_prompt:
+    - name: devsetup_install_homebrew_enabled
+      prompt: "Would you like to install Homebrew? Press enter for default"
+      default: "yes"
+      private: no
+
+  tasks:
+    - lineinfile:
+        path: "../vars/vars.yml"
+        regexp: "^devsetup_install_homebrew_enabled: (?:True|False)$"
+        line: "devsetup_install_homebrew_enabled: {{ devsetup_install_homebrew_enabled|bool }}"
+        
+      

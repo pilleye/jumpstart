@@ -1,0 +1,18 @@
+---
+- name: Ensuring Homebrew is installed
+  stat:
+    path: "/usr/local/bin/brew"
+  register: "check_homebrew"
+
+- name: Installing Homebrew
+  command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  when: check_homebrew is not defined
+
+- name: Updating Homebrew
+  homebrew: 
+    update_homebrew: true
+
+- name: Upgrading Homebrew
+  homebrew:
+    upgrade_all: true
+

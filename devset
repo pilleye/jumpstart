@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo -e "\n\033[38;5;255m\033[48;5;234m\033[1m                         \033[0m"
+echo -e "\033[38;5;255m\033[48;5;234m\033[1m  macOS Developer Setup  \033[0m"
+echo -e "\033[38;5;255m\033[48;5;234m\033[1m     by Aditya Pillai    \033[0m"
+echo -e "\033[38;5;255m\033[48;5;234m\033[1m                         \033[0m\n"
+
+# ./util/venv.sh
+
+source .venv/bin/activate
+
+read -r -p "Do you wish to customize your installation? " confirm
+  case "$confirm" in
+    no) echo; echo "Installing defaults specified in vars/vars.yml";;
+     *) echo; echo "Confirmed. Customizing installation.";
+         echo; echo; ansible-playbook playbooks/configure.yml -i inventories/inventory
+  esac
+
+# Run ansible playbook
+ansible-playbook -i inventories/inventory playbooks/main.yml 
