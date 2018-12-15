@@ -2,10 +2,15 @@
 
 set -e
 
+
+
 echo -e "\n\033[38;5;255m\033[48;5;234m\033[1m                         \033[0m"
 echo -e "\033[38;5;255m\033[48;5;234m\033[1m  macOS Developer Setup  \033[0m"
 echo -e "\033[38;5;255m\033[48;5;234m\033[1m     by Aditya Pillai    \033[0m"
 echo -e "\033[38;5;255m\033[48;5;234m\033[1m                         \033[0m\n"
+
+echo "Your password is needed to prevent the program from stopping in the middle of an installation."
+sudo -v
 
 # ./util/venv.sh
 
