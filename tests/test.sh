@@ -1,3 +1,3 @@
 set -e 
 
-echo "no\n\n\n\n\n\n\n\n\n" | ./devset
+echo "no" | sudo ./devset
