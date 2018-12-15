@@ -1,11 +1,8 @@
 ---
 os: osx
-language: python
-cache: pip
-python: "3"
 
 install: 
-  - virtualenv .venv/bin/activate
+  - virtualenv -p python3 .venv
 
 script:
   - ./tests/test.sh
