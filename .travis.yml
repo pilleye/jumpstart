@@ -2,8 +2,7 @@
 os: osx
 
 install: 
-  - brew install python3
-  - virtualenv -p python3 .venv
+  - virtualenv .venv
   - source .venv/bin/activate
   - pip install -r requirements.txt
 
