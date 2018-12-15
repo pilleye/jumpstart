@@ -1,3 +1,3 @@
 set -e 
 
-echo "no" | ./devset
+echo "no" | ./jumpstart
