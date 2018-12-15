@@ -9,14 +9,21 @@ echo -e "\033[38;5;255m\033[48;5;234m\033[1m  macOS Developer Setup  \033[0m"
 echo -e "\033[38;5;255m\033[48;5;234m\033[1m     by Aditya Pillai    \033[0m"
 echo -e "\033[38;5;255m\033[48;5;234m\033[1m                         \033[0m\n"
 
+echo "macOS Developer Setup Copyright (C) 2018 Aditya Pillai"
+echo "This program comes with ABSOLUTELY NO WARRANTY; for details see LICENSE."
+echo "This is free software, and you are welcome to redistribute it"
+echo "under certain conditions; see LICENSE for details."; echo;
+
 echo "Your password is needed to prevent the program from stopping in the middle of an installation."
 sudo -v
 
-# ./util/venv.sh
 
+# ./util/venv.sh
+echo; echo "Activating virtual environment..."
 source .venv/bin/activate
 
-read -r -p "Do you wish to customize your installation? " confirm
+echo;
+read -r -p "Do you wish to customize your installation? [yes]: " confirm
   case "$confirm" in
     no) echo; echo "Installing defaults specified in vars/vars.yml";;
      *) echo; echo "Confirmed. Customizing installation.";
