@@ -9,7 +9,6 @@
   when: check_homebrew is not defined
 
 - name: Updating Homebrew
-  when: is_travis is not defined
   homebrew: 
     update_homebrew: true
 
