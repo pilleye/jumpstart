@@ -9,25 +9,25 @@ Jumpstart is a fully-fledged tool that quickly installs a development setup to y
 
 ### Installation
 
-Quick StartUsing Jumpstart is a straightforward process, simply run the following commands in the Terminal.
+Using Jumpstart is a straightforward process, simply run the following commands in the Terminal.
 ```bash
-# Install pip (if it does not exist)
+# Install pip (if it does not exist).
 sudo easy_install pip
 
-# Install virtualenv
+# Install virtualenv.
 pip install virtualenv
 
-# Clone the repository to the current directory
+# Clone the repository to the current directory.
 git clone https://github.com/adityarpillai/jumpstart.git
 
-# Change directory into the repository
+# Change directory into the repository.
 cd jumpstart
 
-# Create a python virtual environment
+# Create a python virtual environment.
 virtualenv .venv
 
 # Run the installation script.
-/jumpstart
+./jumpstart
 ```
 
 Visit https://jumpstart.pillai.io for more details.
