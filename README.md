@@ -2,6 +2,7 @@
 # Jumpstart
 
 Master Branch: [![Build Status](https://travis-ci.com/adityarpillai/macOS-developer-setup.svg?branch=master)](https://travis-ci.com/adityarpillai/macOS-developer-setup)
+
 Development Branch: [![Build Status](https://travis-ci.com/adityarpillai/macOS-developer-setup.svg?branch=dev)](https://travis-ci.com/adityarpillai/macOS-developer-setup)
 
 **Jumpstart your Mac Development Environment.**
