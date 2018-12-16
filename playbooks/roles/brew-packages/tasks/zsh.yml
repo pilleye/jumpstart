@@ -1,6 +1,5 @@
 ---
 - name: Installing zsh
-  become: yes
   homebrew:
     name: zsh
     state: present
