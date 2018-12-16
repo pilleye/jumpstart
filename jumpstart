@@ -24,8 +24,11 @@ read -r -p "Do you wish to customize your installation? [yes]: " confirm
   case "$confirm" in
     no) echo; echo "Installing defaults specified in ./global_vars/vars.yml";;
      *) echo; echo "Confirmed. Customizing installation.";
-         echo; echo; ansible-playbook playbooks/configure.yml -i inventories/inventory
+         echo; ansible-playbook playbooks/configure.yml -i inventories/inventory
   esac
+
+echo
+read -r -p "Installation is ready to begin. Press [enter] to start the automated process... " a
 
 # Run ansible playbook
 ansible-playbook -i inventories/inventory playbooks/main.yml --extra-vars "@./global_vars/vars.yml"
