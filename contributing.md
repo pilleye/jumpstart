@@ -4,6 +4,18 @@ description: How to contribute to Jumpstart.
 
 # Contributing
 
+## Git
+
+Fork[ the repository on GitHub](https://www.github.com/jumpstart). 
+
+#### Improvements / Minor Bugfixes
+
+Submit pull requests to the `dev` branch on the repository. Your pull request will first go through testing, then will be manually approved and merged. 
+
+#### Major Bugfixes / Hotfixes
+
+Submit pull requests directly `master` branch on the repository. Your pull request will go through testing, then will be manually reviewed for severity and will be merged.
+
 ## Development Environment
 
 Setting up a development environment is identical to using Jumpstart.
