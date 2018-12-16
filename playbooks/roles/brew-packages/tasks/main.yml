@@ -1,3 +1,0 @@
----
-- import_tasks: zsh.yml
-  when: js_homebrewpackage_zsh_enabled
