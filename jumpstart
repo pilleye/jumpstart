@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Change directory to the directory of the script
+cd "$(dirname "$0")"
+
 set -e
 
 
@@ -18,6 +21,9 @@ echo "under certain conditions; see LICENSE for details."; echo;
 # ./util/venv.sh
 echo; echo "Activating virtual environment..."
 source .venv/bin/activate
+
+echo; echo "Installing requirements..."
+pip install -r requirements.txt
 
 echo;
 read -r -p "Do you wish to customize your installation? [yes]: " confirm
