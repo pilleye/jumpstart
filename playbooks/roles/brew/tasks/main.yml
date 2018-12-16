@@ -13,6 +13,7 @@
     update_homebrew: true
 
 - name: Upgrading Homebrew
+  when: js_homebrew_enabled
   homebrew:
     upgrade_all: true
 
