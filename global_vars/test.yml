@@ -1,3 +1,2 @@
 ---
-js_homebrew_enabled: False
-js_homebrewpackage_zsh_enabled: True
+is_travis: True
