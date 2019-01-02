@@ -3,9 +3,12 @@
   homebrew_cask:
     name: iterm2
 
+- name: Launch and Close iTerm2
+  shell: open -a iTerm && pkill iTerm
+
 - name: Save a Backup of iTerm2 Settings
   copy: 
-    src: ~/Library/Preferences/com.googlecode.iterm2.plist
+    src: /Users/{{ ansible_user }}/Preferences/com.googlecode.iterm2.plist
     dest: ~/Library/Preferences/com.googlecode.iterm2.plist.backup
 
 - name: Convert iTerm2 Settings from Binary to a XML
@@ -15,6 +18,12 @@
   copy: 
     src: "{{ role_path }}/files/iterm2.plist"
     dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+
+- name: Set working directory
+  lineinfile: 
+    path: "~/Library/Preferences/com.googlecode.iterm2.plist"
+    regexp: "/Users/"
+    line: "\t\t\t<string>/Users/{{ ansible_user }}</string>"
 
 - name: Convert iTerm2 Settings back from XML to Binary
   shell: plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist
