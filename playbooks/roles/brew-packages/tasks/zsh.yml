@@ -5,7 +5,9 @@
     name: zsh
 
 - name: Cloning oh-my-zsh repository
-  shell: git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  git: 
+    repo: https://github.com/robbyrussell/oh-my-zsh.git 
+    dest: ~/.oh-my-zsh
 
 - name: Creating .zshrc configuration file
   shell: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
@@ -14,3 +16,7 @@
   become: yes
   shell: chsh -s /bin/zsh
 
+- name: Changing to zsh shell in Ansible
+  user: 
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

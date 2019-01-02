@@ -27,26 +27,26 @@ read -p "By continuing, you agree to the terms above. Press [enter] to continue.
 # Require sudo password
 # sudo -v
 
-# Show what must be installed to run the program
-echo "The script will now install three necessary prerequisites -- Xcode Command Line Tools, Homebrew, and Python..."; echo;
+# # Show what must be installed to run the program
+# echo "The script will now install three necessary prerequisites -- Xcode Command Line Tools, Homebrew, and Python..."; echo;
 
-# Ensure the user understands what must be installed.
-read -p "Press [enter] to continue..."; echo;
+# # Ensure the user understands what must be installed.
+# read -p "Press [enter] to continue..."; echo;
 
-# Install Xcode Command Line Tools
-echo "Ensuring Xcode Command Line Tools are installed..."; echo;
-./scripts/xcode-clt.sh
+# # Install Xcode Command Line Tools
+# echo "Ensuring Xcode Command Line Tools are installed..."; echo;
+# ./scripts/xcode-clt.sh
 
-# Install Homebrew
-echo "Ensuring Homebrew is installed..."; echo;
-./scripts/homebrew.sh
+# # Install Homebrew
+# echo "Ensuring Homebrew is installed..."; echo;
+# ./scripts/homebrew.sh
 
-echo "Ensuring Python 3 is installed..."; echo;
-./scripts/python.sh
+# echo "Ensuring Python 3 is installed..."; echo;
+# ./scripts/python.sh
 
-# Create a virtual environment
-echo "Ensuring virtual environment is installed in ./.venv folder..."
-./scripts/venv.sh
+# # Create a virtual environment
+# echo "Ensuring virtual environment is installed in ./.venv folder..."
+# ./scripts/venv.sh
 
 echo "Activating virtual environment..."; echo;
 source .venv/bin/activate
