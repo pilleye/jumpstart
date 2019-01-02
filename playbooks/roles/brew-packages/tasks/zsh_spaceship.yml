@@ -4,6 +4,7 @@
     name: zsh
 
 - name: Changing to zsh shell
+  become: yes
   user: 
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
