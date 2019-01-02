@@ -3,24 +3,17 @@
   homebrew:
     name: zsh
 
-- name: Changing to zsh shell
-  become: yes
-  user: 
-    name: "{{ ansible_user_id }}"
-    shell: "/bin/zsh"
-  
-- name: Get ZSH Path
-  setup: 
-
 - name: Cloning Spaceship Prompt repository
   git:
     repo: https://github.com/denysdovhan/spaceship-prompt.git
-    dest: "$ZSH/custom/themes/spaceship-prompt"
+    dest: "~/.oh-my-zsh/custom/themes/spaceship-prompt"
 
 - name: Symlink spaceship.zsh-theme to oh-my-zsh custom themes directory
-  shell: ln -s "$ZSH/custom/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/custom/themes/spaceship.zsh-theme"
-  args:
-    executable: /bin/zsh
+  file: 
+    src: "~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme"
+    dest: "~/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+    state: link
+
     
 - name: Changing theme in .zshrc
   lineinfile: 

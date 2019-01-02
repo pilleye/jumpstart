@@ -8,5 +8,10 @@ install:
   - source .venv/bin/activate
   - pip install -r requirements.txt
 
+env:
+  matrix: 
+  - TEST_VAR="js_homebrewpackage_zsh_enabled"
+  - TEST_VAR="js_homebrewpackage_zshtheme_spaceship_enabled"
+
 script:
   - ./tests/test.sh

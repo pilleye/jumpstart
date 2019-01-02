@@ -1,0 +1,13 @@
+---
+- name: Updating Homebrew
+  homebrew:
+    update_homebrew: yes
+
+- name: Upgrading Homebrew Packages
+  homebrew:
+    upgrade_all: yes
+
+- import_tasks: iterm2.yml
+  when: js_homebrewcask_iterm2_enabled
+
+  
