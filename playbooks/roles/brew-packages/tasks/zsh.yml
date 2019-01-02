@@ -15,8 +15,3 @@
 - name: Changing default shell to zsh
   become: yes
   shell: chsh -s /bin/zsh
-
-- name: Changing to zsh shell in Ansible
-  user: 
-    name: "{{ ansible_user_id }}"
-    shell: /bin/zsh

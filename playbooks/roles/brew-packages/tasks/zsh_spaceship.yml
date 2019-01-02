@@ -1,7 +1,5 @@
 ---
-- name: Ensuring zsh is installed
-  homebrew:
-    name: zsh
+- import_tasks: zsh.yml
 
 - name: Cloning Spaceship Prompt repository
   git:
