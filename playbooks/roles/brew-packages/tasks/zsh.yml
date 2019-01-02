@@ -14,6 +14,6 @@
 
 - name: Changing default shell to zsh
   become: yes
-  become_user: {{ ansible_user }}
+  become_user: "{{ ansible_user }}"
   shell: chsh -s /bin/zsh
   when: js_homebrewpackage_zsh_enabled
