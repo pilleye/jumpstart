@@ -13,7 +13,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
 else
   echo "Xcode Command Line tools not found..."; echo;
   echo "Follow instructions in the GUI to install Command Line Tools..."; echo;
-  xcode-select --install
+  xcode-select --install; echo;
 fi
 
 read -p "Press [enter] to continue after Xcode Command Line Tools are installed..."

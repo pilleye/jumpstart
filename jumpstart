@@ -22,10 +22,10 @@ echo "under certain conditions; see LICENSE for details."; echo;
 # Ensure user has read the LICENSE
 read -p "By continuing, you agree to the terms above. Press [enter] to continue..."; echo;
 
-
-echo "The script will now execute sudo -v so that you will not need to type in your password again during the execution of this script..."; echo;
+# DEPRECATED:
+# echo "The script will now execute sudo -v so that you will not need to type in your password again during the execution of this script..."; echo;
 # Require sudo password
-sudo -v
+# sudo -v
 
 # Show what must be installed to run the program
 echo "The script will now install three necessary prerequisites -- Xcode Command Line Tools, Homebrew, and Python..."; echo;
@@ -70,4 +70,4 @@ echo
 read -r -p "Installation is ready to begin. Press [enter] to start the automated process... " a
 
 # Run ansible playbook
-ansible-playbook -i inventories/inventory playbooks/main.yml --extra-vars "@./global_vars/vars.yml"
+ansible-playbook -i inventories/inventory playbooks/main.yml --extra-vars "@./global_vars/vars.yml" --ask-become-pass
