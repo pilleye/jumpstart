@@ -5,6 +5,7 @@
 
 - name: Cloning Spaceship Prompt repository
   shell: git clone https://github.com/denysdovhan/spaceship-prompt.git "{{ ansible_env.ZSH_CUSTOM }}/themes/spaceship-prompt"
+  gather_facts: yes
 
 - name: Symlink spaceship.zsh-theme to oh-my-zsh custom themes directory
   shell: ln -s "{{ ansible_env.ZSH_CUSTOM }}/themes/spaceship-prompt/spaceship.zsh-theme" "{{ ansible_env.ZSH_CUSTOM }}/themes/spaceship.zsh-theme"

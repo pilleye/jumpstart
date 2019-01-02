@@ -15,3 +15,5 @@ else
   echo "Follow instructions in the GUI to install Command Line Tools..."; echo;
   xcode-select --install
 fi
+
+read -p "Press [enter] to continue after Xcode Command Line Tools are installed..."
