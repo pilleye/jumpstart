@@ -8,7 +8,6 @@
   homebrew:
     upgrade_all: yes
   when: not is_CI
-    upgrade_all: yes
 
 - import_tasks: iterm2.yml
   when: js_homebrewcask_iterm2_enabled
