@@ -6,17 +6,25 @@
 
   vars_prompt:
     - name: js_understand_default
-      prompt: "For the following, press enter for the default value in"
-      default: "square brackets"
+      prompt: "For the following, press enter for the default value"
+      default: "yes"
       private: no
     - name: js_homebrewpackage_zsh_enabled
       prompt: "Would you like to install the Z shell (zsh)? Press enter for default"
       default: "yes"
       private: no
+    - name: js_homebrewpackage_zshtheme_spaceship_enabled
+      prompt: "Would you like to set the Zsh theme to spaceship?"
+      default: "yes"
 
   tasks:
     - lineinfile:
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewpackage_zsh_enabled: (?:True|False)$"
         line: "js_homebrewpackage_zsh_enabled: {{ js_homebrewpackage_zsh_enabled|bool }}"
-      
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_zshtheme_spaceship_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_zshtheme_spaceship_enabled: {{ js_homebrewpackage_zshtheme_spaceship_enabled|bool }}"
+
+        

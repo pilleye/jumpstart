@@ -9,3 +9,8 @@
 
 - import_tasks: zsh.yml
   when: js_homebrewpackage_zsh_enabled
+
+- import_tasks: zsh_spaceship.yml
+  gather_facts: true
+  when: js_homebrewpackage_zshtheme_spaceship_enabled
+  

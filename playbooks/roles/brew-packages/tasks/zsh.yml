@@ -1,7 +1,4 @@
 ---
-- name: Installing git
-  homebrew:
-    name: git
 
 - name: Installing zsh
   homebrew:

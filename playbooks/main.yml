@@ -1,6 +1,7 @@
 ---
 - name: Running installation
   hosts: system
+  gather_facts: true
 
   roles:
   - brew-packages
