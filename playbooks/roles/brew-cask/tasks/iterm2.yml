@@ -3,12 +3,14 @@
   homebrew_cask:
     name: iterm2
 
-- name: Launch and Close iTerm2
-  shell: open -a iTerm && pkill iTerm
+- name: Ensure iTerm2 Settings Exist
+  file:
+    src: ~/Library/Preferences/com.googlecode.iterm2.plist
+    state: touch
 
 - name: Save a Backup of iTerm2 Settings
   copy: 
-    src: /Users/{{ ansible_user }}/Preferences/com.googlecode.iterm2.plist
+    src: ~/Library/Preferences/com.googlecode.iterm2.plist
     dest: ~/Library/Preferences/com.googlecode.iterm2.plist.backup
 
 - name: Convert iTerm2 Settings from Binary to a XML
