@@ -4,6 +4,5 @@
   gather_facts: true
 
   roles:
-  - brew-packages
-
-    # - brew-cask
+  - brew-packages  
+  - brew-cask
