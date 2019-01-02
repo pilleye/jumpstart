@@ -3,8 +3,6 @@
   hosts: system
 
   roles:
-  - xcode-command-line-tools
-  - brew
   - brew-packages
 
     # - brew-cask

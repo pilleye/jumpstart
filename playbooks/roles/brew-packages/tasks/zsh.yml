@@ -1,11 +1,12 @@
 ---
+- name: Installing git
+  homebrew:
+    name: git
+
 - name: Installing zsh
   homebrew:
     name: zsh
-    state: present
-    update_homebrew: yes
 
 - name: Installing Oh My Zsh
   become: yes
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  
