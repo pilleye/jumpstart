@@ -8,13 +8,13 @@
     path: ~/Library/Preferences/com.googlecode.iterm2.plist
     state: touch
 
-- name: Save a Backup of iTerm2 Settings
-  copy: 
-    src: ~/Library/Preferences/com.googlecode.iterm2.plist
-    dest: ~/Library/Preferences/com.googlecode.iterm2.plist.backup
+# - name: Save a Backup of iTerm2 Settings
+#   copy: 
+#     src: ~/Library/Preferences/com.googlecode.iterm2.plist
+#     dest: ~/Library/Preferences/com.googlecode.iterm2.plist.backup
 
-- name: Convert iTerm2 Settings from Binary to a XML
-  shell: plutil -convert xml1 ~/Library/Preferences/com.googlecode.iterm2.plist
+# - name: Convert iTerm2 Settings from Binary to a XML
+#   shell: plutil -convert xml1 ~/Library/Preferences/com.googlecode.iterm2.plist
 
 - name: Import Dracula Color Scheme
   copy: 
