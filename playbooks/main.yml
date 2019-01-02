@@ -1,10 +1,8 @@
 ---
 - name: Running installation
   hosts: system
+  gather_facts: true
 
   roles:
-  - xcode-command-line-tools
-  - brew
-  - brew-packages
-
-    # - brew-cask
+  - brew-packages  
+  - brew-cask

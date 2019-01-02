@@ -1,11 +1,20 @@
 ---
+
 - name: Installing zsh
   homebrew:
     name: zsh
-    state: present
-    update_homebrew: yes
 
-- name: Installing Oh My Zsh
+- name: Cloning oh-my-zsh repository
+  git: 
+    repo: https://github.com/robbyrussell/oh-my-zsh.git 
+    dest: ~/.oh-my-zsh
+
+- name: Creating .zshrc configuration file
+  shell: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+- name: Changing default shell to zsh
+  user:
+    name: "{{ ansible_user }}"
+    shell: "/bin/zsh"
   become: yes
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  
+  when: js_homebrewpackage_zsh_enabled

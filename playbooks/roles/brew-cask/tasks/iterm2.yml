@@ -1,0 +1,31 @@
+---
+- name: Install iTerm2 through Homebrew
+  homebrew_cask:
+    name: iterm2
+
+- name: Ensure iTerm2 Settings Exist
+  file:
+    path: ~/Library/Preferences/com.googlecode.iterm2.plist
+    state: touch
+
+# - name: Save a Backup of iTerm2 Settings
+#   copy: 
+#     src: ~/Library/Preferences/com.googlecode.iterm2.plist
+#     dest: ~/Library/Preferences/com.googlecode.iterm2.plist.backup
+
+# - name: Convert iTerm2 Settings from Binary to a XML
+#   shell: plutil -convert xml1 ~/Library/Preferences/com.googlecode.iterm2.plist
+
+- name: Import Dracula Color Scheme
+  copy: 
+    src: "{{ role_path }}/files/iterm2.plist"
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+
+- name: Set working directory
+  lineinfile: 
+    path: "~/Library/Preferences/com.googlecode.iterm2.plist"
+    regexp: "/Users/"
+    line: "\t\t\t<string>/Users/{{ ansible_user }}</string>"
+
+- name: Convert iTerm2 Settings back from XML to Binary
+  shell: plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist

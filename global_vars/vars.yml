@@ -1,2 +1,5 @@
 ---
+is_CI: False
 js_homebrewpackage_zsh_enabled: True
+js_homebrewpackage_zshtheme_spaceship_enabled: True
+js_homebrewcask_iterm2_enabled: True

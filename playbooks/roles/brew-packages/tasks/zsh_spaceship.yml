@@ -1,0 +1,21 @@
+---
+- import_tasks: zsh.yml
+  when: not js_homebrewpackage_zsh_enabled
+  
+- name: Cloning Spaceship Prompt repository
+  git:
+    repo: https://github.com/denysdovhan/spaceship-prompt.git
+    dest: "~/.oh-my-zsh/custom/themes/spaceship-prompt"
+
+- name: Symlink spaceship.zsh-theme to oh-my-zsh custom themes directory
+  file: 
+    src: "~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme"
+    dest: "~/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+    state: link
+
+    
+- name: Changing theme in .zshrc
+  lineinfile: 
+    path: "~/.zshrc"
+    regexp: "^ZSH_THEME"
+    line: "ZSH_THEME=\"spaceship\""
