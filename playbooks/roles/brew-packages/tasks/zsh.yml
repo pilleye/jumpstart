@@ -4,6 +4,13 @@
   homebrew:
     name: zsh
 
-- name: Installing Oh My Zsh
+- name: Cloning oh-my-zsh repository
+  shell: git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+- name: Creating .zshrc configuration file
+  shell: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+- name: Changing default shell to zsh
   become: yes
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  shell: chsh -s /bin/zsh
+
