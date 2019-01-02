@@ -1,2 +1,2 @@
 ---
-is_travis: True
+is_CI: True
