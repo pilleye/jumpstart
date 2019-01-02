@@ -10,8 +10,9 @@ install:
 
 env:
   matrix: 
-  - TEST_VAR="js_homebrewpackage_zsh_enabled"
-  - TEST_VAR="js_homebrewpackage_zshtheme_spaceship_enabled"
+  - TEST_VAR="@./global_vars/vars.yml"
+  - TEST_VAR="js_homebrewpackage_zsh_enabled=True"
+  - TEST_VAR="js_homebrewpackage_zshtheme_spaceship_enabled=True"
 
 script:
   - ./tests/test.sh

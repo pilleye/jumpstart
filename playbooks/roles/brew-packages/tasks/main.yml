@@ -2,10 +2,12 @@
 - name: Updating Homebrew
   homebrew:
     update_homebrew: yes
+  when: not is_travis
 
 - name: Upgrading Homebrew Packages
   homebrew:
     upgrade_all: yes
+  when: not is_travis
 
 - import_tasks: zsh.yml
   when: js_homebrewpackage_zsh_enabled
