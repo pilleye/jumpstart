@@ -5,7 +5,7 @@
 
 - name: Ensure iTerm2 Settings Exist
   file:
-    src: ~/Library/Preferences/com.googlecode.iterm2.plist
+    path: ~/Library/Preferences/com.googlecode.iterm2.plist
     state: touch
 
 - name: Save a Backup of iTerm2 Settings
