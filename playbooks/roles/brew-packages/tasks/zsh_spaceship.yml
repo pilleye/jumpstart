@@ -1,6 +1,7 @@
 ---
 - import_tasks: zsh.yml
-
+  when: not js_homebrewpackage_zsh_enabled
+  
 - name: Cloning Spaceship Prompt repository
   git:
     repo: https://github.com/denysdovhan/spaceship-prompt.git
