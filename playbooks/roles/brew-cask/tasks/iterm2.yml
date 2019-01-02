@@ -2,3 +2,19 @@
 - name: Install iTerm2 through Homebrew
   homebrew_cask:
     name: iterm2
+
+- name: Save a Backup of iTerm2 Settings
+  copy: 
+    src: ~/Library/Preferences/com.googlecode.iterm2.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist.backup
+
+- name: Convert iTerm2 Settings from Binary to a XML
+  shell: plutil -convert xml1 ~/Library/Preferences/com.googlecode.iterm2.plist
+
+- name: Import Dracula Color Scheme
+  copy: 
+    src: "{{ role_path }}/files/iterm2.plist"
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+
+- name: Convert iTerm2 Settings back from XML to Binary
+  shell: plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist
