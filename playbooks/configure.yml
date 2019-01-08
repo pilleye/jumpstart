@@ -16,11 +16,13 @@
     - name: js_homebrewpackage_zshtheme_spaceship_enabled
       prompt: "Would you like to set the Zsh theme to spaceship?"
       default: "yes"
+    - name: js_homebrewpackage_python_enabled
+      prompt: "Would you like to install Python?"
+      default: "yes"
     - name: js_homebrewcask_iterm2_enabled
       prompt: "Would you like to install iTerm2?"
       default: "yes"
-
-    
+    - name: 
 
   tasks:
     - lineinfile:
@@ -33,6 +35,10 @@
         line: "js_homebrewpackage_zshtheme_spaceship_enabled: {{ js_homebrewpackage_zshtheme_spaceship_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_python_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_python_enabled: {{ js_homebrewpackage_python_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_iterm2_enabled: (?:True|False)$"
         line: "js_homebrewcask_iterm2_enabled: {{ js_homebrewcask_iterm2_enabled|bool }}"
-        
+   
