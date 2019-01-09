@@ -9,6 +9,9 @@
     upgrade_all: yes
   when: not is_CI
 
+- import_tasks: python.yml
+  when: 
+
 - import_tasks: zsh.yml
   when: js_homebrewpackage_zsh_enabled
 
