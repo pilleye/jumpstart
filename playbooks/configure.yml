@@ -22,7 +22,6 @@
     - name: js_homebrewcask_iterm2_enabled
       prompt: "Would you like to install iTerm2?"
       default: "yes"
-    - name: 
 
   tasks:
     - lineinfile:
