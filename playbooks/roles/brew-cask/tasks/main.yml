@@ -27,3 +27,5 @@
 - import_tasks: slack.yml
   when: js_homebrewcask_slack_enabled
 
+- import_tasks: discord.yml
+  when: js_homebrewcask_discord_enabled

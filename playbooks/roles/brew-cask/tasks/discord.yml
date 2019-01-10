@@ -1,0 +1,6 @@
+---
+- name: Install Discord through Homebrew
+  homebrew_cask:
+    name: discord
+    install_options: 'appdir=/Applications'
+  
