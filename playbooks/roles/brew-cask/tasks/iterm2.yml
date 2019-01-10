@@ -11,6 +11,7 @@
 
 - name: Quit iTerm2
   shell: killall iTerm2
+  ignore_errors: yes
 
 - name: Install Dracula Color Scheme
   shell: "open {{ role_path }}/files/Dracula.itermcolors"
