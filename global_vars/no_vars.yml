@@ -8,3 +8,4 @@ js_homebrewcask_sublimetext3_enabled: False
 js_homebrewcask_atom_enabled: False
 js_homebrewcask_gpgsuite_enabled: False
 js_homebrewcask_googlechrome_enabled: False
+js_homebrewcask_slack_enabled: False

@@ -9,3 +9,4 @@ js_homebrewcask_sublimetext3_enabled: True
 js_homebrewcask_atom_enabled: True
 js_homebrewcask_gpgsuite_enabled: True
 js_homebrewcask_googlechrome_enabled: True
+js_homebrewcask_slack_enabled: True

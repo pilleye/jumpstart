@@ -38,6 +38,9 @@
     - name: js_homebrewcask_gpgsuite_enabled
       prompt: "Would you like to install GPG Suite?"
       default: "yes"
+    - name: js_homebrewcask_slack_enabled
+      prompt: "Would you like to install Slack?"
+      default: "yes"
 
   tasks:
     - lineinfile:

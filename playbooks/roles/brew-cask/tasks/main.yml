@@ -23,3 +23,7 @@
 
 - import_tasks: gpgsuite.yml
   when: js_homebrewcask_gpgsuite_enabled
+
+- import_tasks: slack.yml
+  when: js_homebrewcask_slack_enabled
+
