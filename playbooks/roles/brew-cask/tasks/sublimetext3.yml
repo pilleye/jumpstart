@@ -6,7 +6,8 @@
 
 - name: Opening Sublime Text 3
   shell: "/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
-
+  ignore_errors: yes
+  
 - name: Configuring Sublime Text 3
   copy:
     src: "{{ role_path }}/files/Preferences.sublime-settings"
