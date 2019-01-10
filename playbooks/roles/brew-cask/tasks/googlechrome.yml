@@ -1,0 +1,6 @@
+---
+- name: Install Google Chrome through Homebrew
+  homebrew_cask:
+    name: google-chrome
+    install_options: 'appdir=/Applications'
+  
