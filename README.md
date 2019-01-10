@@ -1,7 +1,7 @@
 
 # Jumpstart
 
-![Screenshot of my Shell](https://imgur.com/zLLU9VX)
+![Screenshot of my Shell](https://imgur.com/zLLU9VX.png)
 
 | Branch | Build Status |
 | --------- | ----- | 
