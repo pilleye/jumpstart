@@ -12,4 +12,5 @@
 - import_tasks: iterm2.yml
   when: js_homebrewcask_iterm2_enabled
 
-  
+- import_tasks: sublimetext3.yml
+  when: js_homebrewcask_sublimetext3_enabled

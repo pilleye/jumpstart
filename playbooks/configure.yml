@@ -6,21 +6,25 @@
 
   vars_prompt:
     - name: js_understand_default
-      prompt: "For the following, press enter for the default value"
+      prompt: "We will now go through Command Line Tools..."
       default: "yes"
-      private: no
     - name: js_homebrewpackage_zsh_enabled
       prompt: "Would you like to install the Z shell (zsh)?"
       default: "yes"
-      private: no
     - name: js_homebrewpackage_zshtheme_spaceship_enabled
       prompt: "Would you like to set the Zsh theme to spaceship?"
       default: "yes"
     - name: js_homebrewpackage_python_enabled
       prompt: "Would you like to install Python?"
       default: "yes"
+    - name: js_understand_default
+      prompt: "We will now go through General Applications and Tools..."
+      default: "yes"
     - name: js_homebrewcask_iterm2_enabled
       prompt: "Would you like to install iTerm2?"
+      default: "yes"
+    - name: js_homebrewcask_sublimetext3_enabled
+      prompt: "Would you like to install Sublime Text 3?"
       default: "yes"
 
   tasks:
@@ -40,4 +44,7 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_iterm2_enabled: (?:True|False)$"
         line: "js_homebrewcask_iterm2_enabled: {{ js_homebrewcask_iterm2_enabled|bool }}"
-   
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_sublimetext3_enabled: (?:True|False)$"
+        line: "js_homebrewcask_sublimetext3_enabled: {{ js_homebrewcask_sublimetext3_enabled|bool }}"

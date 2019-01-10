@@ -2,6 +2,8 @@
 - name: Install iTerm2 through Homebrew
   homebrew_cask:
     name: iterm2
+    install_options: 'appdir=/Applications'
+
 
 - name: Open iTerm2
   shell: "/Application/iTerm.app/Contents/MacOS/iTerm2 &"
