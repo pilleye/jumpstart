@@ -21,6 +21,9 @@
 - import_tasks: atom.yml
   when: js_homebrewcask_atom_enabled
 
+- import_tasks: visualstudiocode.yml
+  when: js_homebrewcask_visualstudiocode_enabled
+
 - import_tasks: gpgsuite.yml
   when: js_homebrewcask_gpgsuite_enabled
 
@@ -32,4 +35,4 @@
 
 - import_tasks: mactex.yml
   when: js_homebrewcask_mactex_enabled
-  
+
