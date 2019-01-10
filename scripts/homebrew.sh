@@ -15,3 +15,6 @@ if test ! $(which brew); then
 else
   echo "Homebrew is already installed..."; echo;
 fi
+
+echo "Updating and upgrading Homebrew..."; echo;
+brew update && brew upgrade
