@@ -26,6 +26,10 @@
     - name: js_homebrewcask_sublimetext3_enabled
       prompt: "Would you like to install Sublime Text 3?"
       default: "yes"
+    - name: js_homebrewcask_atom_enabled
+      prompt: "Would you like to install Atom?"
+      default: "yes"
+
 
   tasks:
     - lineinfile:
@@ -48,3 +52,8 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_sublimetext3_enabled: (?:True|False)$"
         line: "js_homebrewcask_sublimetext3_enabled: {{ js_homebrewcask_sublimetext3_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_atom_enabled: (?:True|False)$"
+        line: "js_homebrewcask_atom_enabled: {{ js_homebrewcask_atom_enabled|bool }}"
+        

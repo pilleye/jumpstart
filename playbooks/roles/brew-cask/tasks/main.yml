@@ -14,3 +14,6 @@
 
 - import_tasks: sublimetext3.yml
   when: js_homebrewcask_sublimetext3_enabled
+
+- import_tasks: atom.yml
+  when: js_homebrewcask_atom_enabled
