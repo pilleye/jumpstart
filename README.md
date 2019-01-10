@@ -3,7 +3,7 @@
 
 ![Screenshot of my Shell](https://imgur.com/zLLU9VX.png)
 
-![Install Process](https://i.imgur.com/mTQpmb1.gif)
+![Install Process](https://i.imgur.com/h4e7vlr.gif)
 
 | Branch | Build Status |
 | --------- | ----- | 
