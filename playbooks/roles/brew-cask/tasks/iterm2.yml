@@ -6,7 +6,7 @@
 
 
 - name: Open iTerm2
-  shell: "/Application/iTerm.app/Contents/MacOS/iTerm2"
+shell: "/Applications/iTerm.app/Contents/MacOS/iTerm2 &"
   ignore_errors: yes
 
 - name: Wait for iTerm2 to Initialize Files
