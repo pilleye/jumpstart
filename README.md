@@ -1,6 +1,8 @@
 
 # Jumpstart
 
+![Screenshot of my Shell](https://imgur.com/zLLU9VX)
+
 | Branch | Build Status |
 | --------- | ----- | 
 | `master` |  [![Build Status](https://travis-ci.com/adityarpillai/jumpstart.svg?branch=master)](https://travis-ci.com/adityarpillai/jumpstart)   |
