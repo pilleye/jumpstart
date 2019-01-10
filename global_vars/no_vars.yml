@@ -10,3 +10,4 @@ js_homebrewcask_gpgsuite_enabled: False
 js_homebrewcask_googlechrome_enabled: False
 js_homebrewcask_slack_enabled: False
 js_homebrewcask_discord_enabled: False
+js_homebrewcask_mactex_enabled: False

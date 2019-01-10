@@ -29,3 +29,7 @@
 
 - import_tasks: discord.yml
   when: js_homebrewcask_discord_enabled
+
+- import_tasks: mactex.yml
+  when: js_homebrewcask_mactex_enabled
+  

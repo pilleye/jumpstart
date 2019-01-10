@@ -44,6 +44,9 @@
     - name: js_homebrewcask_discord_enabled
       prompt: "Would you like to install Discord?"
       default: "yes"
+    - name: js_homebrewcask_mactex_enabled
+      prompt: "Would you like to install MacTex?"
+      default: "yes"
 
   tasks:
     - lineinfile:
@@ -90,3 +93,7 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_discord_enabled: (?:True|False)$"
         line: "js_homebrewcask_discord_enabled: {{ js_homebrewcask_discord_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_mactex_enabled: (?:True|False)$"
+        line: "js_homebrewcask_mactex_enabled: {{ js_homebrewcask_mactex_enabled|bool }}"  
