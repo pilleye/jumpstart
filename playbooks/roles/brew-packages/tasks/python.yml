@@ -7,7 +7,28 @@
   homebrew:
     name: python3
 
-- name: Instaling pyenv
+- name: Installing pyenv
   homebrew:
     name: pyenv
+
+- name: Adding pyenv to Bash Profile
+  lineinfile: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+    path: ~/.bash_profile
+    regexp: "^eval \"$(pyenv init -)\""
+    create: yes
+    line: "eval \"$(pyenv init -)\""
+
+- name: Check if zsh is installed
+  stat:
+    path: ~/.zshrc
+  register: zsh_installed
+
+- name: Adding pyenv to zsh profile
+  lineinfile: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+    path: ~/.bash_profile
+    regexp: "^eval \"$(pyenv init -)\""
+    create: yes
+    line: "eval \"$(pyenv init -)\""
+  when: zsh_installed.stat.exists == True
+
 
