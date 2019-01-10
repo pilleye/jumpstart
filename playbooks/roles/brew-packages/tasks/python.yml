@@ -11,8 +11,7 @@
   homebrew:
     name: pyenv
 
-- name: Adding pyenv to Bash Profile
-  lineinfile: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+- lineinfile: 
     path: "~/.bash_profile"
     regexp: "^eval \"$(pyenv init -)\""
     create: yes
@@ -23,8 +22,7 @@
     path: ~/.zshrc
   register: zsh_installed
 
-- name: Adding pyenv to zsh profile
-  lineinfile: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+- lineinfile: 
     path: "~/.zshrc"
     regexp: "^eval \"$(pyenv init -)\""
     create: yes
