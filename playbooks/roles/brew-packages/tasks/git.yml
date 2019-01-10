@@ -1,0 +1,4 @@
+---
+- name: Installing Git
+  homebrew:
+    name: git

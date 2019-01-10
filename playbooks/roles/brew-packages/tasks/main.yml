@@ -12,6 +12,9 @@
 - import_tasks: python.yml
   when: js_homebrewpackage_python_enabled
 
+- import_tasks: git.yml
+  when: js_homebrewpackage_git_enabled
+
 - import_tasks: zsh.yml
   when: js_homebrewpackage_zsh_enabled
 

@@ -17,6 +17,9 @@
     - name: js_homebrewpackage_python_enabled
       prompt: "Would you like to install Python?"
       default: "yes"
+    - name: js_homebrewpackage_git_enabled
+      prompt: "Would you like to install Git?"
+      default: "yes"
     - name: js_understand_default
       prompt: "We will now go through General Applications and Tools..."
       default: "yes"
@@ -46,6 +49,10 @@
         line: "js_homebrewpackage_python_enabled: {{ js_homebrewpackage_python_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewpackage_git_enabled: (?:True|False)$"
+        line: "js_homebrewpackage_git_enabled: {{ js_homebrewpackage_git_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_iterm2_enabled: (?:True|False)$"
         line: "js_homebrewcask_iterm2_enabled: {{ js_homebrewcask_iterm2_enabled|bool }}"
     - lineinfile:
@@ -56,4 +63,3 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_atom_enabled: (?:True|False)$"
         line: "js_homebrewcask_atom_enabled: {{ js_homebrewcask_atom_enabled|bool }}"
-        
