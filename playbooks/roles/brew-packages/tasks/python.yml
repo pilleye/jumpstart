@@ -13,7 +13,7 @@
 
 - name: Adding pyenv to Bash Profile
   lineinfile: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
-    path: ~/.bash_profile
+    path: "~/.bash_profile"
     regexp: "^eval \"$(pyenv init -)\""
     create: yes
     line: "eval \"$(pyenv init -)\""
@@ -25,7 +25,7 @@
 
 - name: Adding pyenv to zsh profile
   lineinfile: echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
-    path: ~/.bash_profile
+    path: "~/.zshrc"
     regexp: "^eval \"$(pyenv init -)\""
     create: yes
     line: "eval \"$(pyenv init -)\""
