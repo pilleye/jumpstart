@@ -7,3 +7,4 @@ js_homebrewpackage_python_enabled: True
 js_homebrewpackage_git_enabled: True
 js_homebrewcask_sublimetext3_enabled: True
 js_homebrewcask_atom_enabled: True
+js_homebrewcask_gpgsuite_enabled: True

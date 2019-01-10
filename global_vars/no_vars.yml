@@ -6,3 +6,4 @@ js_homebrewpackage_python_enabled: False
 js_homebrewpackage_git_enabled: False
 js_homebrewcask_sublimetext3_enabled: False
 js_homebrewcask_atom_enabled: False
+js_homebrewcask_gpgsuite_enabled: False

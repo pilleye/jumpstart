@@ -17,3 +17,6 @@
 
 - import_tasks: atom.yml
   when: js_homebrewcask_atom_enabled
+
+- import_tasks: gpgsuite.yml
+  when: js_homebrewcask_gpgsuite_enabled

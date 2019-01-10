@@ -19,6 +19,7 @@ env:
   - TEST_VAR="js_homebrewpackage_python_enabled=True"
   - TEST_VAR="js_homebrewcask_sublimetext3_enabled=True"
   - TEST_VAR="js_homebrewcask_atom_enabled=True"
+  - TEST_VAR="js_homebrewcask_gpgsuite_enabled"
   - TEST_VAR="@./global_vars/vars.yml"
 
 script:

@@ -32,7 +32,9 @@
     - name: js_homebrewcask_atom_enabled
       prompt: "Would you like to install Atom?"
       default: "yes"
-
+    - name: js_homebrewcask_gpgsuite_enabled
+      prompt: "Would you like to install GPG Suite?"
+      default: "yes"
 
   tasks:
     - lineinfile:
@@ -63,3 +65,7 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_atom_enabled: (?:True|False)$"
         line: "js_homebrewcask_atom_enabled: {{ js_homebrewcask_atom_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_gpgsuite_enabled: (?:True|False)$"
+        line: "js_homebrewcask_gpgsuite_enabled: {{ js_homebrewcask_gpgsuite_enabled|bool }}"
