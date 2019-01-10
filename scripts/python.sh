@@ -10,4 +10,4 @@ echo "Installing Python 3 through Homebrew..."; echo;
 brew install python3
 
 echo "Installing virtualenv package through pip3..."; echo;
-pip3 install virtualenv
+/usr/local/bin/pip3 install virtualenv
