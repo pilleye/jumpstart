@@ -73,6 +73,10 @@
       prompt: "Would you like to install MacTex?"
       default: "yes"
       private: no
+    - name: js_homebrewcask_docker_enabled
+      prompt: "Would you like to install Docker?"
+      default: "yes"
+      private: no
 
   tasks:
     - lineinfile:
@@ -135,3 +139,7 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_mactex_enabled: (?:True|False)$"
         line: "js_homebrewcask_mactex_enabled: {{ js_homebrewcask_mactex_enabled|bool }}"  
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_docker_enabled: (?:True|False)$"
+        line: "js_homebrewcask_docker_enabled: {{ js_homebrewcask_docker_enabled|bool }}"

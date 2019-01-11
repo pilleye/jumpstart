@@ -15,3 +15,4 @@ js_homebrewcask_googlechrome_enabled: True
 js_homebrewcask_slack_enabled: True
 js_homebrewcask_discord_enabled: True
 js_homebrewcask_mactex_enabled: True
+js_homebrewcask_docker_enabled: True

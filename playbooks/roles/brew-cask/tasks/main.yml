@@ -36,3 +36,6 @@
 - import_tasks: mactex.yml
   when: js_homebrewcask_mactex_enabled
 
+- import_tasks: docker.yml
+  when: js_homebrewcask_docker_enabled
+
