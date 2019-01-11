@@ -3,8 +3,9 @@ os: osx
 sudo: required
 
 before_install:
-  - brew doctor
-  - travis_retry brew update --debug --verbose && travis_retry brew upgrade --debug --verbose
+  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  - brew install python
 
 install: 
   - pip install virtualenv
