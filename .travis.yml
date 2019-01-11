@@ -3,7 +3,7 @@ os: osx
 sudo: required
 
 before_install:
-  - travis_wait brew update && brew upgrade
+  - travis_wait brew update && travis_wait brew upgrade
 
 install: 
   - pip install virtualenv
