@@ -1,0 +1,4 @@
+---
+- name: Installing Node
+  homebrew:
+    name: node
