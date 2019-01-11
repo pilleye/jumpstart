@@ -12,23 +12,23 @@ before_install:
 
 env:
   matrix: 
-  - TEST_VAR="js_homebrewpackage_zsh_enabled=True"
-  - TEST_VAR="js_homebrewpackage_zshtheme_spaceship_enabled=True"
-  - TEST_VAR="js_homebrewcask_iterm2_enabled=True"
-  - TEST_VAR="js_homebrewpackage_python_enabled=True"
-  - TEST_VAR="js_homebrewpackage_git_enabled=True"
-  - TEST_VAR="js_homebrewpackage_node_enabled=True"
+  - TEST_VAR="@./global_vars/vars.yml"
+  - TEST_VAR="js_homebrewcask_mactex_enabled=True"
   - TEST_VAR="js_homebrewcask_java_enabled=True"
+  - TEST_VAR="js_homebrewcask_docker_enabled=True"
+  - TEST_VAR="js_homebrewcask_iterm2_enabled=True"
+  - TEST_VAR="js_homebrewcask_googlechrome_enabled=True"
   - TEST_VAR="js_homebrewcask_sublimetext3_enabled=True"
   - TEST_VAR="js_homebrewcask_atom_enabled=True"
   - TEST_VAR="js_homebrewcask_visualstudiocode_enabled=True"
   - TEST_VAR="js_homebrewcask_gpgsuite_enabled=True"
-  - TEST_VAR="js_homebrewcask_googlechrome_enabled=True"
   - TEST_VAR="js_homebrewcask_slack_enabled=True"
   - TEST_VAR="js_homebrewcask_discord_enabled=True"
-  - TEST_VAR="js_homebrewcask_mactex_enabled=True"
-  - TEST_VAR="js_homebrewcask_docker_enabled=True"
-  - TEST_VAR="@./global_vars/vars.yml"
+  - TEST_VAR="js_homebrewpackage_zsh_enabled=True"
+  - TEST_VAR="js_homebrewpackage_zshtheme_spaceship_enabled=True"
+  - TEST_VAR="js_homebrewpackage_python_enabled=True"
+  - TEST_VAR="js_homebrewpackage_git_enabled=True"
+  - TEST_VAR="js_homebrewpackage_node_enabled=True"
 
 script:
   - travis_wait ./tests/test.sh
