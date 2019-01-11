@@ -3,6 +3,7 @@ os: osx
 sudo: required
 
 before_install:
+  - brew doctor
   - travis_wait brew update && travis_wait brew upgrade
 
 install: 
