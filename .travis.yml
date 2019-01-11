@@ -5,11 +5,11 @@ sudo: required
 before_install:
   - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
   - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  - brew install python
+  - brew install python3
 
 install: 
-  - pip install virtualenv
-  - virtualenv .venv
+  - /usr/local/bin/pip3 install virtualenv
+  - /usr/local/bin/virtualenv -p /usr/local/bin/python3 .venv
   - source .venv/bin/activate
   - pip install -r requirements.txt
 
