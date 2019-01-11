@@ -18,9 +18,6 @@
 - import_tasks: node.yml
   when: js_homebrewpackage_node_enabled
 
-- import_tasks: java.yml
-  when: js_homebrewpackage_java_enabled
-
 - import_tasks: zsh.yml
   when: js_homebrewpackage_zsh_enabled
 
