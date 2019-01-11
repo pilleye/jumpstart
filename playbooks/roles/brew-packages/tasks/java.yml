@@ -1,0 +1,10 @@
+---
+- name: Installing Java 9
+  homebrew:
+    name: java
+
+- name: Installing Java 8
+  homebrew:
+    name: java8
+
+
