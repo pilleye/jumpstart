@@ -19,7 +19,7 @@ env:
   - TEST_VAR="js_homebrewpackage_python_enabled=True"
   - TEST_VAR="js_homebrewpackage_git_enabled=True"
   - TEST_VAR="js_homebrewpackage_node_enabled=True"
-  - TEST_VAR="js_homebrewpackage_java_enabled=True"
+  - TEST_VAR="js_homebrewcask_java_enabled=True"
   - TEST_VAR="js_homebrewcask_sublimetext3_enabled=True"
   - TEST_VAR="js_homebrewcask_atom_enabled=True"
   - TEST_VAR="js_homebrewcask_visualstudiocode_enabled=True"

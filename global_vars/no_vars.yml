@@ -4,7 +4,7 @@ js_homebrewpackage_zshtheme_spaceship_enabled: False
 js_homebrewpackage_python_enabled: False
 js_homebrewpackage_git_enabled: False
 js_homebrewpackage_node_enabled: False
-js_homebrewpackage_java_enabled: False
+js_homebrewcask_java_enabled: False
 js_homebrewcask_iterm2_enabled: False
 js_homebrewcask_sublimetext3_enabled: False
 js_homebrewcask_atom_enabled: False

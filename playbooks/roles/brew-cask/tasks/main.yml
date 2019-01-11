@@ -39,3 +39,5 @@
 - import_tasks: docker.yml
   when: js_homebrewcask_docker_enabled
 
+- import_tasks: java.yml
+  when: js_homebrewcask_java_enabled

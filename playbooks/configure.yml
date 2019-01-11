@@ -29,10 +29,6 @@
       prompt: "Would you like to install NodeJS?"
       default: "yes"
       private: no
-    - name: js_homebrewpackage_java_enabled
-      prompt: "Would you like to install Java?"
-      default: "yes"
-      private: no
     - name: js_understand_default
       prompt: "We will now go through General Applications and Tools..."
       default: "ok"
@@ -77,6 +73,10 @@
       prompt: "Would you like to install Docker?"
       default: "yes"
       private: no
+    - name: js_homebrewcask_java_enabled
+      prompt: "Would you like to install Java?"
+      default: "yes"
+      private: no
 
   tasks:
     - lineinfile:
@@ -99,10 +99,6 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewpackage_node_enabled: (?:True|False)$"
         line: "js_homebrewpackage_node_enabled: {{ js_homebrewpackage_node_enabled|bool }}"
-    - lineinfile:
-        path: "../global_vars/vars.yml"
-        regexp: "^js_homebrewpackage_java_enabled: (?:True|False)$"
-        line: "js_homebrewpackage_java_enabled: {{ js_homebrewpackage_java_enabled|bool }}"
     - lineinfile:
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_googlechrome_enabled: (?:True|False)$"
@@ -143,3 +139,7 @@
         path: "../global_vars/vars.yml"
         regexp: "^js_homebrewcask_docker_enabled: (?:True|False)$"
         line: "js_homebrewcask_docker_enabled: {{ js_homebrewcask_docker_enabled|bool }}"
+    - lineinfile:
+        path: "../global_vars/vars.yml"
+        regexp: "^js_homebrewcask_java_enabled: (?:True|False)$"
+        line: "js_homebrewcask_java_enabled: {{ js_homebrewcask_java_enabled|bool }}"
