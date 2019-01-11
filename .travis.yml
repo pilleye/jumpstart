@@ -4,7 +4,7 @@ sudo: required
 
 before_install:
   - brew doctor
-  - brew update --debug --verbose && brew upgrade --debug --verbose
+  - travis_retry brew update --debug --verbose && travis_retry brew upgrade --debug --verbose
 
 install: 
   - pip install virtualenv
@@ -33,4 +33,4 @@ env:
   - TEST_VAR="@./global_vars/vars.yml"
 
 script:
-  - travis_wait ./tests/test.sh
+  - travis_retry ./tests/test.sh
