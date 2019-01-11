@@ -4,9 +4,8 @@
 set -e
 
 # Remove any existing virtualenv
-echo "Removing any existing virtual environment"
 rm -Rf .venv
 
 # Creating virtualenv
 echo "Creating python virtual environment in ./.venv/ folder..."; echo;
-/usr/local/bin/virtualenv -p python3 .venv
+/usr/local/bin/virtualenv -p /usr/local/bin/python3 .venv &> /dev/null

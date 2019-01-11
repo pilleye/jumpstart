@@ -3,15 +3,9 @@ os: osx
 sudo: required
 
 before_install:
-  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
-  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  - brew install python3
-
-install: 
-  - /usr/local/bin/pip3 install virtualenv
-  - /usr/local/bin/virtualenv -p /usr/local/bin/python3 .venv
-  - source .venv/bin/activate
-  - pip install -r requirements.txt
+  - ./scripts/homebrew.sh
+  - ./scripts/python.sh
+  - ./scripts/venv.sh
 
 env:
   matrix: 
@@ -34,4 +28,4 @@ env:
   - TEST_VAR="@./global_vars/vars.yml"
 
 script:
-  - travis_retry ./tests/test.sh
+  - ./tests/test.sh
