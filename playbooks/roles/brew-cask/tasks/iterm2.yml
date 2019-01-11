@@ -2,11 +2,35 @@
 - name: Install iTerm2 through Homebrew
   homebrew_cask:
     name: iterm2
+    install_options: 'appdir=/Applications'
 
-- name: Ensure iTerm2 Settings Exist
-  file:
-    path: ~/Library/Preferences/com.googlecode.iterm2.plist
-    state: touch
+
+- name: Open iTerm2
+  shell: "/Applications/iTerm.app/Contents/MacOS/iTerm2 &"
+  ignore_errors: yes
+
+- name: Wait for iTerm2 to Initialize Files
+  shell: sleep 5
+
+- name: Quit iTerm2
+  shell: killall iTerm2
+  ignore_errors: yes
+
+- name: Install Dracula Color Scheme
+  shell: "open {{ role_path }}/files/Dracula.itermcolors"
+
+- name: Creating iTerm2 DynamicProfiles Directory
+  shell: mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles/
+
+- name: Copying Dracula Settings to iTerm2
+  copy:
+    src: "{{ role_path }}/files/Dracula.itermprofile.json"
+    dest: "~/Library/Application\ Support/iTerm2/DynamicProfiles/"
+
+# - name: Ensure iTerm2 Settings Exist
+#   file:
+#     path: ~/Library/Preferences/com.googlecode.iterm2.plist
+#     state: touch
 
 # - name: Save a Backup of iTerm2 Settings
 #   copy: 
@@ -16,16 +40,16 @@
 # - name: Convert iTerm2 Settings from Binary to a XML
 #   shell: plutil -convert xml1 ~/Library/Preferences/com.googlecode.iterm2.plist
 
-- name: Import Dracula Color Scheme
-  copy: 
-    src: "{{ role_path }}/files/iterm2.plist"
-    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+# - name: Import Dracula Color Scheme
+#   copy: 
+#     src: "{{ role_path }}/files/iterm2.plist"
+#     dest: ~/Library/Preferences/com.googlecode.iterm2.plist
 
-- name: Set working directory
-  lineinfile: 
-    path: "~/Library/Preferences/com.googlecode.iterm2.plist"
-    regexp: "/Users/"
-    line: "\t\t\t<string>/Users/{{ ansible_user }}</string>"
+# - name: Set working directory
+#   lineinfile: 
+#     path: "~/Library/Preferences/com.googlecode.iterm2.plist"
+#     regexp: "/Users/"
+#     line: "\t\t\t<string>/Users/{{ ansible_user }}</string>"
 
-- name: Convert iTerm2 Settings back from XML to Binary
-  shell: plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist
+# - name: Convert iTerm2 Settings back from XML to Binary
+#   shell: plutil -convert binary1 ~/Library/Preferences/com.googlecode.iterm2.plist

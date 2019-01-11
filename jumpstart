@@ -35,26 +35,24 @@ read -p "Press [enter] to continue..."; echo;
 
 # Install Xcode Command Line Tools
 echo "Ensuring Xcode Command Line Tools are installed..."; echo;
-./scripts/xcode-clt.sh
+./scripts/xcode-clt.sh 
 
 # Install Homebrew
-echo "Ensuring Homebrew is installed..."; echo;
 ./scripts/homebrew.sh
 
-echo "Ensuring Python 3 is installed..."; echo;
+# Install Python3
 ./scripts/python.sh
 
 # Create a virtual environment
-echo "Ensuring virtual environment is installed in ./.venv folder..."
 ./scripts/venv.sh
 
 echo "Activating virtual environment..."; echo;
 source .venv/bin/activate
 
-echo; echo "Installing requirements..."
-pip install -r requirements.txt
+echo "Installing requirements..."; echo;
+pip install -r requirements.txt &> /dev/null
 
-echo; echo "The prerequisites are now installed... Press [enter] to continue the installation..."; read
+echo "The prerequisites are now installed... Press [enter] to continue the installation..."; read
 
 read -r -p "Do you wish to customize your installation? [yes]: " confirm
   case "$confirm" in

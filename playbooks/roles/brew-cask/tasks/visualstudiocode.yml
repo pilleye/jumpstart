@@ -1,0 +1,6 @@
+---
+- name: Install Visual Studio Code through Homebrew
+  homebrew_cask:
+    name: visual-studio-code
+    install_options: 'appdir=/Applications'
+  

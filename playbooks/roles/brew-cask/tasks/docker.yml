@@ -1,0 +1,6 @@
+---
+- name: Install Docker through Homebrew
+  homebrew_cask:
+    name: docker
+    install_options: 'appdir=/Applications'
+  

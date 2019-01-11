@@ -1,0 +1,32 @@
+---
+- name: Installing Python2
+  homebrew:
+    name: python2
+
+- name: Installing Python3
+  homebrew:
+    name: python3
+
+- name: Installing pyenv
+  homebrew:
+    name: pyenv
+
+- lineinfile: 
+    path: "~/.bash_profile"
+    regexp: "^eval \"$(pyenv init -)\""
+    create: yes
+    line: "eval \"$(pyenv init -)\""
+
+- name: Check if zsh is installed
+  stat:
+    path: ~/.zshrc
+  register: zsh_installed
+
+- lineinfile: 
+    path: "~/.zshrc"
+    regexp: "^eval \"$(pyenv init -)\""
+    create: yes
+    line: "eval \"$(pyenv init -)\""
+  when: zsh_installed.stat.exists == True
+
+

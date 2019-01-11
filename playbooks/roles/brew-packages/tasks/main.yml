@@ -2,12 +2,21 @@
 - name: Updating Homebrew
   homebrew:
     update_homebrew: yes
-  when: not is_CI
+  # when: not is_CI
 
 - name: Upgrading Homebrew Packages
   homebrew:
     upgrade_all: yes
-  when: not is_CI
+  # when: not is_CI
+
+- import_tasks: python.yml
+  when: js_homebrewpackage_python_enabled
+
+- import_tasks: git.yml
+  when: js_homebrewpackage_git_enabled
+
+- import_tasks: node.yml
+  when: js_homebrewpackage_node_enabled
 
 - import_tasks: zsh.yml
   when: js_homebrewpackage_zsh_enabled

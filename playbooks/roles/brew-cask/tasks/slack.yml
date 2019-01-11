@@ -1,0 +1,6 @@
+---
+- name: Install Slack through Homebrew
+  homebrew_cask:
+    name: slack
+    install_options: 'appdir=/Applications'
+  

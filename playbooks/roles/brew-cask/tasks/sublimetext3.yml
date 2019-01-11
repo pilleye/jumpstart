@@ -1,0 +1,15 @@
+---
+- name: Install Sublime Text 3 through Homebrew
+  homebrew_cask:
+    name: sublime-text
+    install_options: 'appdir=/Applications'
+
+- name: Opening Sublime Text 3
+  shell: "/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text &"
+  ignore_errors: yes
+  
+- name: Configuring Sublime Text 3
+  copy:
+    src: "{{ role_path }}/files/Preferences.sublime-settings"
+    dest: "~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings"
+  ignore_errors: yes

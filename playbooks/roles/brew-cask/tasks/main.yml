@@ -2,14 +2,42 @@
 - name: Updating Homebrew
   homebrew:
     update_homebrew: yes
-  when: not is_CI
+  # when: not is_CI
 
 - name: Upgrading Homebrew Packages
   homebrew:
     upgrade_all: yes
-  when: not is_CI
+  # when: not is_CI
+
+- import_tasks: googlechrome.yml
+  when: js_homebrewcask_googlechrome_enabled
 
 - import_tasks: iterm2.yml
   when: js_homebrewcask_iterm2_enabled
 
-  
+- import_tasks: sublimetext3.yml
+  when: js_homebrewcask_sublimetext3_enabled
+
+- import_tasks: atom.yml
+  when: js_homebrewcask_atom_enabled
+
+- import_tasks: visualstudiocode.yml
+  when: js_homebrewcask_visualstudiocode_enabled
+
+- import_tasks: gpgsuite.yml
+  when: js_homebrewcask_gpgsuite_enabled
+
+- import_tasks: slack.yml
+  when: js_homebrewcask_slack_enabled
+
+- import_tasks: discord.yml
+  when: js_homebrewcask_discord_enabled
+
+- import_tasks: mactex.yml
+  when: js_homebrewcask_mactex_enabled
+
+- import_tasks: docker.yml
+  when: js_homebrewcask_docker_enabled
+
+- import_tasks: java.yml
+  when: js_homebrewcask_java_enabled
