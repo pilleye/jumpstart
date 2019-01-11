@@ -32,4 +32,4 @@ env:
   - TEST_VAR="@./global_vars/vars.yml"
 
 script:
-  - ./tests/test.sh
+  - travis_retry ./tests/test.sh
