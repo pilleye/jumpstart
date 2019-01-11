@@ -3,7 +3,7 @@ os: osx
 sudo: required
 
 before_install:
-  - { yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)" } &> /dev/null
+  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
   - ./scripts/homebrew.sh
   - ./scripts/python.sh
   - ./scripts/venv.sh
