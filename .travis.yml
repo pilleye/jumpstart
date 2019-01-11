@@ -7,6 +7,8 @@ before_install:
   - ./scripts/homebrew.sh
   - ./scripts/python.sh
   - ./scripts/venv.sh
+  - source .venv/bin/activate
+  - pip install -r requirements.txt &> /dev/null
 
 env:
   matrix: 
