@@ -5,7 +5,7 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/juststorage/orgb1/2f5d60f1ece1036eb7721b34806414bc/h4e7vlr.gif" alt="Installation and Customization Process">
-</p>\
+</p>
 
 | Branch | Build Status |
 | --------- | ----- |
