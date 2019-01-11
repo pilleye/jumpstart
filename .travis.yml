@@ -4,7 +4,7 @@ sudo: required
 
 before_install:
   - brew doctor
-  - travis_wait brew update && travis_wait brew upgrade
+  - brew update --debug --verbose && brew upgrade --debug --verbose
 
 install: 
   - pip install virtualenv
