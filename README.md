@@ -3,7 +3,7 @@
 
 ![Screenshot of my Shell](https://imgur.com/zLLU9VX.png)
 
-<img src="https://i.imgur.com/h4e7vlr.gif?raw=true" alt="Installation Process" width="200px">
+![Install Process](https://raw.githubusercontent.com/juststorage/orgb1/2f5d60f1ece1036eb7721b34806414bc/h4e7vlr.gif)
 
 | Branch | Build Status |
 | --------- | ----- | 
