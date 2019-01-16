@@ -3,7 +3,7 @@
   homebrew_cask:
     name: java
 
-- name: Installing Java 8
-  homebrew_cask:
-    name: homebrew/cask-versions/java8
+# - name: Installing Java 8
+#   homebrew_cask:
+#     name: homebrew/cask-versions/java8
 
