@@ -1,6 +1,8 @@
 
 # Jumpstart
 
+Note: Due to college, I will have to take a hiatus on developing this application. I will, however, still approve PRs given that they follow the structure of the program and pass CI tests.
+
 ![Screenshot of my Shell](https://imgur.com/zLLU9VX.png)
 
 <p align="center">
