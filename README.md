@@ -2,11 +2,7 @@
 # Jumpstart
 
 
-<div align="right">
-  <sup>
-    made with ❤️ in Pittsburgh, PA
-  </sup>
-</div>
+<div align="right"> <sup> made with ❤️ in Pittsburgh, PA </sup> </div> <br />
 
 
 Note: Due to college, I will have to take a hiatus on developing this application. I will, however, still approve PRs given that they follow the structure of the program and pass CI tests.
