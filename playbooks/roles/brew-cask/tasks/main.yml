@@ -24,6 +24,9 @@
 - import_tasks: visualstudiocode.yml
   when: js_homebrewcask_visualstudiocode_enabled
 
+- import_tasks: fontfiracode.yml
+  when: js_homebrewcask_fontfiracode_enabled
+
 - import_tasks: gpgsuite.yml
   when: js_homebrewcask_gpgsuite_enabled
 
