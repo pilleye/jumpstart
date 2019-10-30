@@ -1,0 +1,9 @@
+---
+- name: Tap the homebrew cask-fonts repository
+  homebrew_tap: 
+    name: homebrew/cask-fonts
+    state: present
+
+- name: Install the Firacode font through Homebrew
+  homebrew_cask:
+    name: font-fira-code
