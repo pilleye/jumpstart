@@ -1,8 +1,4 @@
 ---
-- name: Installing Python2
-  homebrew:
-    name: python2
-
 - name: Installing Python3
   homebrew:
     name: python3

@@ -9,10 +9,6 @@ Note: Due to college, I will have to take a hiatus on developing this applicatio
 
 ![Screenshot of my Shell](https://imgur.com/zLLU9VX.png)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/juststorage/orgb1/2f5d60f1ece1036eb7721b34806414bc/h4e7vlr.gif" alt="Installation and Customization Process">
-</p>
-
 | Branch | Build Status |
 | --------- | ----- |
 | `master` |  [![Build Status](https://travis-ci.com/adityarpillai/jumpstart.svg?branch=master)](https://travis-ci.com/adityarpillai/jumpstart)   |
