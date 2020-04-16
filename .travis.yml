@@ -2,7 +2,7 @@
 os: osx
 
 before_install:
-  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+  # - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
   - ./scripts/homebrew.sh
   - ./scripts/python.sh
   - ./scripts/venv.sh
