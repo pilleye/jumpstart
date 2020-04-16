@@ -1,6 +1,5 @@
 ---
 os: osx
-sudo: required
 
 before_install:
   - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
@@ -35,4 +34,4 @@ env:
   - TEST_VAR="js_homebrewpackage_node_enabled=True"
 
 script:
-  - travis_retry travis_wait 30 ./tests/test.sh
+  - travis_wait 30 ./tests/test.sh
