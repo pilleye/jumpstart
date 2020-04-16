@@ -8,7 +8,7 @@ jobs:
     name: Test Jumpstart with ${{ matrix.test_var }}
     steps:
       - name: Cleanup Homebrew
-        run: yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+        run: yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
       - uses: actions/checkout@v2
       - name: List Current Directory
         run: ls
