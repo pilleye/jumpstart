@@ -8,8 +8,9 @@ before_install:
   - source ./scripts/travis_macos_brew_cache.sh
   - brew update
   - brew_add_local_bottles
-  - ./scripts/python.sh
-  - ./scripts/venv.sh
+  - brew_install_and_cache_within_time_limit python3 || { [ $? -gt 1 ] && return 2 || return 0; }
+  - /usr/local/bin/pip3 install virtualenv
+  - /usr/local/bin/virtualenv -p /usr/local/bin/python3 .venv &> /dev/null
   - source .venv/bin/activate
   - pip install -r requirements.txt &> /dev/null
 
