@@ -1,17 +1,17 @@
 ---
 os: osx
 
-before_install: |
+before_install:
   # - yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
   # - sudo rm -rf /usr/local/Caskroom
   # - sudo rm -rf /usr/local/Cellar
-  source ./scripts/travis_macos_brew_cache.sh
-  brew update
-  brew_add_local_bottles
-  ./scripts/python.sh
-  ./scripts/venv.sh
-  source .venv/bin/activate
-  pip install -r requirements.txt &> /dev/null
+  - source ./scripts/travis_macos_brew_cache.sh
+  - brew update
+  - brew_add_local_bottles
+  - ./scripts/python.sh
+  - ./scripts/venv.sh
+  - source .venv/bin/activate
+  - pip install -r requirements.txt &> /dev/null
 
 cache:
   directories:
