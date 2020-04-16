@@ -1,0 +1,39 @@
+name: Test Application
+on: [push, pull_request]
+runs-on: macos-latest
+
+strategy:
+  matrix:
+    test_var: 
+      - js_homebrewcask_mactex_enabled=True
+      - js_homebrewcask_java_enabled=True
+      - js_homebrewcask_docker_enabled=True
+      - js_homebrewcask_iterm2_enabled=True
+      - js_homebrewcask_googlechrome_enabled=True
+      - js_homebrewcask_sublimetext3_enabled=True
+      - js_homebrewcask_atom_enabled=True
+      - js_homebrewcask_visualstudiocode_enabled=True
+      - js_homebrewcask_fontfiracode_enabled=True
+      - js_homebrewcask_gpgsuite_enabled=True
+      - js_homebrewcask_slack_enabled=True
+      - js_homebrewcask_discord_enabled=True
+      - js_homebrewpackage_zsh_enabled=True
+      - js_homebrewpackage_zshtheme_spaceship_enabled=True
+      - js_homebrewpackage_python_enabled=True
+      - js_homebrewpackage_git_enabled=True
+      - js_homebrewpackage_node_enabled=True
+
+jobs:
+  - name: Install Dependencies
+    run: 
+      - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+      - ./scripts/homebrew.sh
+      - ./scripts/python.sh
+      - ./scripts/venv.sh
+      - source .venv/bin/activate
+      - pip install -r requirements.txt &> /dev/null
+  - name: Run Jumpstart
+    run: ./tests/test.sh
+    env:
+      TEST_VAR: ${{ matrix.test_var }}
+
