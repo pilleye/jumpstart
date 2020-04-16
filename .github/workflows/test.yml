@@ -1,50 +1,50 @@
-name: Test Application
-on: [push, pull_request]
+# name: Test Application
+# on: [push, pull_request]
 
 
-jobs:
-  test:
-    runs-on: macos-latest
-    name: Test Jumpstart with ${{ matrix.test_var }}
-    steps:
-      - name: Cleanup Homebrew
-        run: yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
-      - uses: actions/checkout@v2
-      - name: List Current Directory
-        run: ls
-      - name: List Parent Directory
-        run: ls ..
-      - name: Install Homebrew
-        run: ./scripts/homebrew.sh
-      - name: Install Python Dependencies
-        run: ./scripts/python.sh
-      - name: Create Virtual Environment
-        run: ./scripts/venv.sh
-      - name: Activate Virtual Environment
-        run: source .venv/bin/activate
-      - name: Install requirements
-        run: pip install -r requirements.txt &> /dev/null
-      - name: Run Tests
-        run: ./tests/test.sh
-    env:
-      TEST_VAR: ${{ matrix.test_var }}
-    strategy:
-      matrix:
-        test_var: 
-          - js_homebrewcask_mactex_enabled=True
-          - js_homebrewcask_java_enabled=True
-          - js_homebrewcask_docker_enabled=True
-          - js_homebrewcask_iterm2_enabled=True
-          - js_homebrewcask_googlechrome_enabled=True
-          - js_homebrewcask_sublimetext3_enabled=True
-          - js_homebrewcask_atom_enabled=True
-          - js_homebrewcask_visualstudiocode_enabled=True
-          - js_homebrewcask_fontfiracode_enabled=True
-          - js_homebrewcask_gpgsuite_enabled=True
-          - js_homebrewcask_slack_enabled=True
-          - js_homebrewcask_discord_enabled=True
-          - js_homebrewpackage_zsh_enabled=True
-          - js_homebrewpackage_zshtheme_spaceship_enabled=True
-          - js_homebrewpackage_python_enabled=True
-          - js_homebrewpackage_git_enabled=True
-          - js_homebrewpackage_node_enabled=True
+# jobs:
+#   test:
+#     runs-on: macos-latest
+#     name: Test Jumpstart with ${{ matrix.test_var }}
+#     steps:
+#       - name: Cleanup Homebrew
+#         run: yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+#       - uses: actions/checkout@v2
+#       - name: List Current Directory
+#         run: ls
+#       - name: List Parent Directory
+#         run: ls ..
+#       - name: Install Homebrew
+#         run: ./scripts/homebrew.sh
+#       - name: Install Python Dependencies
+#         run: ./scripts/python.sh
+#       - name: Create Virtual Environment
+#         run: ./scripts/venv.sh
+#       - name: Activate Virtual Environment
+#         run: source .venv/bin/activate
+#       - name: Install requirements
+#         run: pip install -r requirements.txt &> /dev/null
+#       - name: Run Tests
+#         run: ./tests/test.sh
+#     env:
+#       TEST_VAR: ${{ matrix.test_var }}
+#     strategy:
+#       matrix:
+#         test_var: 
+#           - js_homebrewcask_mactex_enabled=True
+#           - js_homebrewcask_java_enabled=True
+#           - js_homebrewcask_docker_enabled=True
+#           - js_homebrewcask_iterm2_enabled=True
+#           - js_homebrewcask_googlechrome_enabled=True
+#           - js_homebrewcask_sublimetext3_enabled=True
+#           - js_homebrewcask_atom_enabled=True
+#           - js_homebrewcask_visualstudiocode_enabled=True
+#           - js_homebrewcask_fontfiracode_enabled=True
+#           - js_homebrewcask_gpgsuite_enabled=True
+#           - js_homebrewcask_slack_enabled=True
+#           - js_homebrewcask_discord_enabled=True
+#           - js_homebrewpackage_zsh_enabled=True
+#           - js_homebrewpackage_zshtheme_spaceship_enabled=True
+#           - js_homebrewpackage_python_enabled=True
+#           - js_homebrewpackage_git_enabled=True
+#           - js_homebrewpackage_node_enabled=True
