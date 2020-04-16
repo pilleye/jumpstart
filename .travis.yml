@@ -3,6 +3,8 @@ os: osx
 
 before_install:
   - yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+  - sudo rm -rf /usr/local/Caskroom
+  - sudo rm -rf /usr/local/Cellar
   - ./scripts/homebrew.sh
   - ./scripts/python.sh
   - ./scripts/venv.sh
@@ -34,4 +36,4 @@ env:
   - TEST_VAR="js_homebrewpackage_node_enabled=True"
 
 script:
-  - travis_wait 30 ./tests/test.sh
+  - ./tests/test.sh
