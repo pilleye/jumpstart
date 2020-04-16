@@ -11,8 +11,8 @@ Note: Due to college, I will have to take a hiatus on developing this applicatio
 
 | Branch | Build Status |
 | --------- | ----- |
-| `master` |  [![Build Status](https://travis-ci.com/pilleye/jumpstart.svg?branch=master)](https://travis-ci.com/adityarpillai/jumpstart)   |
-| `dev`    | [![Build Status](https://travis-ci.com/pilleye/jumpstart.svg?branch=dev)](https://travis-ci.com/adityarpillai/jumpstart) |
+| `master` |  [![Build Status](https://travis-ci.com/pilleye/jumpstart.svg?branch=master)](https://travis-ci.com/pilleye/jumpstart)   |
+| `dev`    | [![Build Status](https://travis-ci.com/pilleye/jumpstart.svg?branch=dev)](https://travis-ci.com/pilleye/jumpstart) |
 
 **Jumpstart your Mac Development Environment.**
 
@@ -20,7 +20,7 @@ Jumpstart is a fully-fledged tool that quickly installs a development setup to y
 
 ## Installation
 
-1) Download [the latest release](https://github.com/adityarpillai/jumpstart/releases).
+1) Download [the latest release](https://github.com/pilleye/jumpstart/releases).
 2) Right click on `jumpstart` and click `Open`.
 
 Visit https://jumpstart.pillai.io for more details.
