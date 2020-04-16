@@ -24,16 +24,22 @@ strategy:
       - js_homebrewpackage_node_enabled=True
 
 jobs:
-  - name: Install Dependencies
-    run: 
-      - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
-      - ./scripts/homebrew.sh
-      - ./scripts/python.sh
-      - ./scripts/venv.sh
-      - source .venv/bin/activate
-      - pip install -r requirements.txt &> /dev/null
-  - name: Run Jumpstart
-    run: ./tests/test.sh
+  test:
+    name: Test Jumpstart with ${{ matrix.test_var }}
+    steps:
+      # - name: Cleanup Homebrew
+      #   run: yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+      - name: Install Homebrew
+        run: ./scripts/homebrew.sh
+      - name: Install Python Dependencies
+        run: ./scripts/python.sh
+      - name: Create Virtual Environment
+        run: ./scripts/venv.sh
+      - name: Activate Virtual Environment
+        run: source .venv/bin/activate
+      - name: Install requirements
+        run: pip install -r requirements.txt &> /dev/null
+      - name: Run Tests
+        run: ./tests/test.sh
     env:
       TEST_VAR: ${{ matrix.test_var }}
-
