@@ -5,7 +5,7 @@ before_install:
   # - yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
   # - sudo rm -rf /usr/local/Caskroom
   # - sudo rm -rf /usr/local/Cellar
-  # - ./scripts/homebrew.sh
+  - ./scripts/travis_macos_brew_cache.sh
   - ./scripts/python.sh
   - ./scripts/venv.sh
   - source .venv/bin/activate
@@ -14,6 +14,10 @@ before_install:
 cache:
   directories:
     - .venv
+    - $HOME/Library/Caches/Homebrew
+
+before_cache:
+  - brew cleanup
 
 env:
   matrix: 
