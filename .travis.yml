@@ -18,7 +18,7 @@ cache:
   directories:
     - .venv
     - $HOME/Library/Caches/Homebrew
-    - /usr/local/Homebrew/
+    - /usr/local/Homebrew
     - $HOME/local_bottle_metadata
 
 
@@ -46,4 +46,4 @@ env:
   - TEST_VAR="js_homebrewpackage_node_enabled=True"
 
 script:
-  - ./tests/test.sh
+  - travis_wait 20 ./tests/test.sh
