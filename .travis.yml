@@ -11,9 +11,9 @@ before_install:
   - source .venv/bin/activate
   - pip install -r requirements.txt &> /dev/null
 
-# cache:
-#   directories:
-#     - $HOME/Library/Caches/Homebrew
+cache:
+  directories:
+    - .venv
 
 env:
   matrix: 
