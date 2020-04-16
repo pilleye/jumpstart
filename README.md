@@ -11,8 +11,8 @@ Note: Due to college, I will have to take a hiatus on developing this applicatio
 
 | Branch | Build Status |
 | --------- | ----- |
-| `master` |  [![Build Status](https://travis-ci.com/adityarpillai/jumpstart.svg?branch=master)](https://travis-ci.com/adityarpillai/jumpstart)   |
-| `dev`    | [![Build Status](https://travis-ci.com/adityarpillai/jumpstart.svg?branch=dev)](https://travis-ci.com/adityarpillai/jumpstart) |
+| `master` |  [![Build Status](https://travis-ci.com/pilleye/jumpstart.svg?branch=master)](https://travis-ci.com/adityarpillai/jumpstart)   |
+| `dev`    | [![Build Status](https://travis-ci.com/pilleye/jumpstart.svg?branch=dev)](https://travis-ci.com/adityarpillai/jumpstart) |
 
 **Jumpstart your Mac Development Environment.**
 
