@@ -6,16 +6,18 @@
 
 - name: Installing Homebrew
   command: '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-  when: check_homebrew is not defined
+  when: is_CI|default(False) == False
 
 - name: Updating Homebrew
   homebrew: 
     update_homebrew: true
+  when: is_CI|default(False) == False
 
 - name: Upgrading Homebrew
   when: is_travis is not defined
   homebrew:
     upgrade_all: true
+  when: is_CI|default(False) == False
 
 - name: Ensuring ~/.bash_profile exists
   file: 
