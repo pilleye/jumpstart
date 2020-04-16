@@ -6,6 +6,7 @@ before_install:
   # - sudo rm -rf /usr/local/Caskroom
   # - sudo rm -rf /usr/local/Cellar
   - ./scripts/travis_macos_brew_cache.sh
+  - ./scripts/homebrew.sh
   - ./scripts/python.sh
   - ./scripts/venv.sh
   - source .venv/bin/activate
