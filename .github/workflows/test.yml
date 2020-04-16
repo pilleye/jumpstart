@@ -9,6 +9,8 @@ jobs:
     steps:
       # - name: Cleanup Homebrew
       #   run: yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+      # This step checks out a copy of your repository.
+      - uses: actions/checkout@v2
       - name: List Current Directory
         run: ls
       - name: List Parent Directory
