@@ -9,6 +9,10 @@ jobs:
     steps:
       # - name: Cleanup Homebrew
       #   run: yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+      - name: List Current Directory
+        run: ls
+      - name: List Parent Directory
+        run: ls ..
       - name: Install Homebrew
         run: ./scripts/homebrew.sh
       - name: Install Python Dependencies
