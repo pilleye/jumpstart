@@ -1,2 +1,3 @@
 ---
 is_CI: True
+js_homebrewcask_mactex_enabled: False # just because this is way too slow
