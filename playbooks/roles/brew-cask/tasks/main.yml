@@ -2,12 +2,12 @@
 - name: Updating Homebrew
   homebrew:
     update_homebrew: yes
-  # when: not is_CI
+  when: is_CI|default(False) == False
 
 - name: Upgrading Homebrew Packages
   homebrew:
     upgrade_all: yes
-  # when: not is_CI
+  when: is_CI|default(False) == False
 
 - import_tasks: googlechrome.yml
   when: js_homebrewcask_googlechrome_enabled

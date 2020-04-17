@@ -1,18 +1,32 @@
 ---
 os: osx
-sudo: required
 
 before_install:
-  - yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
-  - ./scripts/homebrew.sh
-  - ./scripts/python.sh
-  - ./scripts/venv.sh
+  # - yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+  # - sudo rm -rf /usr/local/Caskroom
+  # - sudo rm -rf /usr/local/Cellar
+  - source ./scripts/travis_macos_brew_cache.sh
+  - brew update
+  - brew_add_local_bottles
+  - brew_install_and_cache_within_time_limit python3 || { [ $? -gt 1 ] && return 2 || return 0; }
+  - /usr/local/bin/pip3 install virtualenv
+  - /usr/local/bin/virtualenv -p /usr/local/bin/python3 .venv &> /dev/null
   - source .venv/bin/activate
   - pip install -r requirements.txt &> /dev/null
 
+cache:
+  directories:
+    - .venv
+    - $HOME/Library/Caches/Homebrew
+    - /usr/local/Homebrew
+    - $HOME/local_bottle_metadata
+
+
+before_cache: |
+    brew_cache_cleanup
+
 env:
   matrix: 
-  - TEST_VAR="@./global_vars/vars.yml"
   - TEST_VAR="js_homebrewcask_mactex_enabled=True"
   - TEST_VAR="js_homebrewcask_java_enabled=True"
   - TEST_VAR="js_homebrewcask_docker_enabled=True"
@@ -32,4 +46,4 @@ env:
   - TEST_VAR="js_homebrewpackage_node_enabled=True"
 
 script:
-  - travis_retry travis_wait 30 ./tests/test.sh
+  - travis_wait 20 ./tests/test.sh
